@@ -1,0 +1,14 @@
+URL: https://www.meteojob.com/jobs/54561171
+ENTREPRISE: Teamis
+TITRE: Data Engineer H/F
+--------------------------------------------------
+
+Description du poste
+En postulant à cette offre, vous aurez l'opportunité de rejoindre une entreprise innovante, leader de la nutrition mobile. À la croisée de l'intelligence artificielle et de la gamification, cette startup en pleine croissance simplifie le quotidien de ses utilisateurs en France et à l'international pour les aider à adopter une alimentation plus saine.
+Ils sont à la recherche d'un(e) Data Engineer pour accompagner l'équipe marketing dans la structuration des données et la création d'outils techniques performants. L'objectif sera de reconstruire entièrement la stack data de zéro sur une mission greenfield à fort impact.
+Vos missions si vous les acceptez
+Concevoir et maintenir les pipelines de données (ingestion, transformation, stockage) depuis les plateformes publicitaires, d'attribution et d'usage
+Participer à la structuration du data lake / data warehouse et garantir la qualité, la disponibilité et la performance des données
+Optimiser les flux de données et les scripts existants, et développer les briques backend alimentant les outils de BI
+Concevoir des APIs, des services et des outils web à destination des équipes marketing pour l'exploitation et l'automatisation des reportings
+Travailler en lien étroit avec les équipes marketing pour comprendre leurs besoins et concevoir des solutions techniques répondant à des cas d'usage concrets

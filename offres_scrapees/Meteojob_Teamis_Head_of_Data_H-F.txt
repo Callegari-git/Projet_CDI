@@ -1,0 +1,16 @@
+URL: https://www.meteojob.com/jobs/54496005
+ENTREPRISE: Teamis
+TITRE: Head of Data H/F
+--------------------------------------------------
+
+Description du poste
+En postulant à cette offre, vous aurez l'opportunité de rejoindre une entreprise française innovante, leader européen sur le marché des plateformes de contenus exclusifs pour les créateurs. En pleine expansion internationale, cette société tech accompagne déjà plus de 18 millions d'utilisateurs et 167 000 créateurs certifiés.
+Ils sont à la recherche d'un(e) Head of Data pour piloter la stratégie data globale et transformer des volumes massifs de données brutes en leviers de croissance business et fonctionnalités produits intelligentes. L'objectif est de structurer le département et d'encadrer les équipes Analytics et Machine Learning.
+Vos missions si vous les acceptez :
+Définir et piloter la stratégie technique de la plateforme data (architecture lakehouse, tracking, intégration CDP).
+Encadrer, recruter et faire monter en compétence une équipe de passionnés (Analytics et ML Engineers).
+Établir les standards de qualité (SQL, DBT, code reviews) et assurer la fiabilité des pipelines.
+Collaborer étroitement avec le Top Management et les Product Managers pour orienter les décisions par la donnée.
+Piloter l'innovation produit via le déploiement de systèmes de recommandation, modèles de Deep Learning et solutions Gen AI.
+Assurer le suivi des métriques opérationnelles et l'optimisation des coûts (FinOps sur AWS).
+Évangéliser la culture 'data-driven' et le self-service au sein de tous les départements.

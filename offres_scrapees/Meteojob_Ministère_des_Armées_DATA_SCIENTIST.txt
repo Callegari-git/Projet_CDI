@@ -1,0 +1,15 @@
+URL: https://www.meteojob.com/jobs/54138435
+ENTREPRISE: Ministère des Armées
+TITRE: DATA SCIENTIST
+--------------------------------------------------
+
+Description du poste
+Le Data Scientist intègre l'équipe en tant que référent technique/ scientifique, il est chargé d'accompagner les juniors dans leur montée en compétences tout en participant à la réalisation des projets data 360 et IA. Il est également en charge de l'utilisation des technologies Big Data et IA, dans le but d'aider à la prise de décision et faire de la veille technologique sur les architectures Big Data et IA.
+Vous aurez la responsabilité de :
+• Analyser des données pour traduire une problématique métier en problème mathématique statistique, et réciproquement
+• Anticiper avantages/inconvénients de différents modèles ou méthodes calcul dans environnement métier après comparaison et évaluation de ces modèles
+• Apporter expertise pour exploration/analyse complexe de données au moyen techniques variées : statistiques, analyse texte, comportementale, images
+• Caractériser des données (qualité, richesse, contenu) en vue de leur intégration dans le système d'information cible du métier et créer des algorithmes de recherche de données permettant d'explorer les données utiles
+• Produire des rapports et des représentations graphiques à partir des données pertinentes afin de synthétiser et traduire des informations pour faciliter la prise de décision.
+Date de début :
+01/03/2026

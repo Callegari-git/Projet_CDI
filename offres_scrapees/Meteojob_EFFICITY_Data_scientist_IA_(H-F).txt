@@ -1,0 +1,20 @@
+URL: https://www.meteojob.com/jobs/54686389
+ENTREPRISE: EFFICITY
+TITRE: Data scientist IA (H/F)
+--------------------------------------------------
+
+Description du poste
+Réseau majeur de consultants immobiliers indépendants fondé en 2007,
+efficity
+conçoit des outils innovants pour accompagner ses consultants dans la réussite de leur activité.
+Forts de notre expertise en estimation en ligne, nous investissons continuellement pour maintenir notre position avec pour objectif de devenir le moteur d'estimation le plus précis du marché français.
+Dans le cadre de notre croissance, nous recrutons un
+Data Scientist IA Senior
+. Intégré à l'équipe Data et rattaché au Lead Data Scientist, votre mission sera de porter nos algorithmes d'estimation vers de nouveaux sommets de précision.
+Vos missions
+Alimenter et dépiler un backlog relatif aux questions à se poser et aux prochaines étapes à mettre en œuvre pour améliorer le moteur d'estimation actuel.
+Proposer de nouveaux cas d'usage à nos jeux de données, indépendamment de l'estimation.
+Définir de nouvelles sources de données exploitables, analyser la donnée, c'est-à-dire évaluer sa pertinence, la nettoyer (gestion de la donnée manquante, des outliers, etc.), pour enfin l'intégrer aux modèles utilisés directement en production.
+Proposer et implémenter de nouvelles pistes d'un point de vue algorithmique (feature engineering, optimisation des hyperparamètres, choix judicieux de modèles de machine learning (forêts aléatoires avec scikit-learn, deep learning avec pytorch ou tensorflow, etc.).
+Développer des représentations de ces données exploitables pour le commun des mortels (graphiques et cartographiques)
+Participer à la mise en place des outils IA facilitant la tâche de nos consultants immobiliers, des équipes du siège ou des acheteurs et vendeurs particuliers

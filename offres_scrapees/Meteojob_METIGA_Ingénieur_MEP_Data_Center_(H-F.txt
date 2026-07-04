@@ -1,0 +1,26 @@
+URL: https://www.meteojob.com/jobs/54559828
+ENTREPRISE: METIGA
+TITRE: Ingénieur MEP Data Center (H/F)
+--------------------------------------------------
+
+Description du poste
+Choisir MÉTIGA, c'est rejoindre une équipe passionnée par le défi de la transition écologique, qui agit pour sa carrière et pour le monde de demain.
+MÉTIGA est une société à mission, spécialisée dans la transition énergétique, environnementale et sociale.
+Nous travaillons auprès de bureaux d'études, maîtres d'ouvrages, industriels et acteurs publics pour leur apporter les compétences nécessaires au bon accomplissement de leurs projets.
+Une expérience enrichissante :
+Chez MÉTIGA, nous nous fixons pour ambition de faire vivre à chaque collaborateur une expérience qui le fera grandir. Ensemble, nous élaborons un plan de développement professionnel aligné avec vos ambitions et vous donnons les moyens de le mettre en oeuvre.
+Agir concrètement, agir quotidiennement :
+Diversité des missions, formations, montée en compétences techniques, développement des compétences humaines, challenges, rencontres : nous mettons à votre disposition un terrain de jeu professionnel enrichissant pour atteindre vos objectifs de carrière et garantir votre épanouissement au travail.
+Le poste :
+En tant qu'ingénieur MEP Data Center (H/F), vous accompagnerez des projets de construction / extension / retrofit de data centers (environnements critiques) .
+Vous intervenez sur la coordination et l'intégration des lots MEP (Mechanical, Electrical, Plumbing) afin de garantir la conformité technique, la performance et la disponibilité des installations (redondance, maintenabilité, exigences de mise en service).
+Vos missions principales :
+- Piloter la coordination technique MEP (CVC/froid, CFO/CFA, plomberie technique, SSI/sprinklage selon périmètre)
+- Participer aux phases conception & exécution : revue des études, notes de calcul, plans, interfaces multi-lots
+- Challenger les solutions techniques (capacitaire, redondance N+1 / 2N, continuité de service)
+- Suivre les entreprises/MOE : réunions techniques, gestion des interfaces, levée de points bloquants
+- Contrôler la conformité/qualité : inspections, fiches techniques, OPR, DOE
+- Contribuer aux phases de commissioning (FAT/SAT, tests fonctionnels, scénarios de bascule, mise en service, handover exploitation)
+- Assurer le reporting (avancement, risques, planning, actions correctives)
+Environnement :
+Projets à forte technicité et forte exigence (bâtiments critiques) avec interactions multi-acteurs : MOA/MOE, exploitant, mainteneurs, intégrateurs, entreprises travaux.

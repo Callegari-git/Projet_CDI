@@ -1,0 +1,13 @@
+URL: https://www.meteojob.com/jobs/53342712
+ENTREPRISE: Ministère des Armées
+TITRE: DATA SCIENTIST 4/11
+--------------------------------------------------
+
+Description du poste
+Les missions du data scientist sont les suivantes :
+- Développer des programmes permettant de s'appuyer sur la fouille de données, les statistiques, les méthodes de référencement, l'apprentissage automatique et la visualisation de données, dans le but d'aider à la prise de décision en santé de défense dans le cadre des missions de l'OSMV.
+- Effectuer de la recherche fondamentale et appliquée dans le domaine de l'exploitation des données de santé.
+- Apporter son expertise dans la construction des outils SI de l'OSMV.
+Et toute autre mission que lui confiera le chef de département dans son domaine de compétences.
+Date de début :
+01/06/2026

@@ -1,0 +1,73 @@
+# =========================
+# Fichiers Système (OS)
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =========================
+# Éditeurs et IDEs
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.bak
+.project
+.settings/
+
+# =========================
+# Variables d'environnement et Secrets
+# =========================
+# NE JAMAIS PUSH CES FICHIERS !
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.pem
+*.key
+secrets.json
+
+# =========================
+# Logs et Bases de données locales
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.sqlite
+*.db
+
+# =========================
+# Dépendances (exemples courants)
+# =========================
+# Node.js
+node_modules/
+.npm/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env/
+env/
+pip-log.txt
+
+# =========================
+# Fichiers compilés et Build
+# =========================
+dist/
+build/
+out/
+target/
+*.class
+*.o
+*.so

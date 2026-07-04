@@ -1,0 +1,23 @@
+URL: https://www.meteojob.com/jobs/53351146
+ENTREPRISE: Jean-Michel.io
+TITRE: Data engineer H/F
+--------------------------------------------------
+
+Description du poste
+BRAINLOGIC accompagne ses clients dans la réalisation de leurs projets digitaux. Depuis toutes ces années, riches en évolutions et en transformations, nous avons su rester à la pointe de la technologie et de l'innovation avec la même ambition : satisfaire nos clients en leur apportant nos conseils, nos expertises pour pouvoir les accompagner au mieux.
+Résumé du poste
+Au sein de notre Digital Factory, le/la Data Engineer contribue à la conception, au développement et à la maintenance des pipelines d'ingestion de données de notre nouvelle plateforme basée sur Microsoft Fabric et des outils open source (Python, dbt, etc.).
+Vous jouez un rôle central dans la modernisation de notre Modern Data Stack, en automatisant les flux de données et en garantissant leur qualité, leur fiabilité et leur passage à l'échelle, en collaboration étroite avec le Lead Data Platform.
+Contexte :
+Notre Digital Factory (150 personnes) est au cœur de l'innovation technologique et accompagne la transformation numérique de l'entreprise (700 collaborateurs). Face à une croissance importante des initiatives DATA & IA, nous avons engagé début 2025 un changement d'envergure : transformer une plateforme Azure BI dédiée aux usages décisionnels en une plateforme moderne sur Microsoft Fabric, conçue pour répondre aux besoins de self-service analytique, de datascience et de GenAI.
+Dans ce cadre, nous recherchons un Data Engineer prêt à participer activement à la construction et à l'évolution de cette nouvelle plateforme.
+Missions principales
+1. Conception et développement des pipelines
+Concevoir et développer des pipelines d'ingestion en Python sur Microsoft Fabric.
+Automatiser les workflows de collecte, transformation et chargement des données.
+Optimiser les pipelines pour garantir performance, qualité et scalabilité.
+2. Gestion de l'infrastructure et des outils
+Déployer et administrer la plateforme sur Microsoft Fabric, avec Docker et des outils d'orchestration.
+Configurer et maintenir DBT en collaboration avec les Analytics Engineers.
+Mettre en place et améliorer les processus CI/CD, ainsi que les tests unitaires et d'intégration.
+Définir et maintenir le monitoring et l'alerting pour assurer la fiabilité opérationnelle

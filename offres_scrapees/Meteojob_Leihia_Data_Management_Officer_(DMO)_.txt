@@ -1,0 +1,52 @@
+URL: https://www.meteojob.com/jobs/54675131
+ENTREPRISE: Leihia
+TITRE: Data Management Officer (DMO) - H/F
+--------------------------------------------------
+
+Description du poste
+Data Management Officer (DMO) SQL // H/F
+Votre rôle
+Vous rejoignez le Crédit Agricole d'Île-de-France dans un contexte clé : la création du
+Data Management Office (DMO)
+.
+Ici, tout est à construire.
+L'objectif est clair :
+unifier, structurer et fiabiliser la donnée
+pour en faire un socle commun utilisé par l'ensemble des métiers de la Caisse Régionale.
+Votre rôle est central. Vous n'êtes pas là que pour produire de la donnée au sens technique, mais pour
+définir la manière dont elle doit exister, être organisée et utilisée
+.
+Vous intervenez au croisement de la gouvernance, des métiers et de la data, dans un environnement bancaire exigeant, notamment au regard des enjeux réglementaires (
+BCBS 239
+).
+Vous contribuez directement à faire de la donnée un actif stratégique, fiable et piloté.
+Vos missions
+Votre quotidien s'articule autour de plusieurs dimensions complémentaires :
+Gouvernance de la donnée
+Vous définissez et structurez les règles de gestion de la donnée. Vous posez un cadre clair sur les méthodes de calcul, les référentiels et les usages afin de garantir une cohérence globale à l'échelle de l'organisation.
+Qualité & fiabilité des données
+Vous analysez les données existantes, identifiez les écarts et mettez en place des règles de contrôle. Vous pilotez des indicateurs de qualité et inscrivez la donnée dans une logique d'amélioration continue.
+Structuration & modélisation
+À partir de données brutes, vous êtes capable de :
+recréer des tables pertinentes
+redéfinir des logiques de calcul
+organiser et ordonnancer les flux
+construire des référentiels métiers fiables
+Vous travaillez dans des environnements
+SQL
+, avec une logique de structuration et non de développement pur.
+La compétence en développement SQL est impérative pour votre réussite en poste
+Pilotage de projets data
+Vous intervenez comme un véritable chef de projet sur les sujets data :
+compréhension des besoins métiers
+cadrage des usages
+priorisation des sujets
+coordination avec les équipes techniques
+Vous assurez la bonne mise en œuvre des évolutions dans une logique de time to market.
+Interaction métiers & accompagnement
+Vous êtes l'interlocuteur privilégié des métiers sur les sujets data. Vous les accompagnez dans la compréhension, l'utilisation et l'appropriation des données mises à disposition.
+Conformité & réglementation
+Vous intégrez les contraintes réglementaires dans vos travaux, notamment :
+BCBS 239
+exigences de traçabilité
+qualité et auditabilité des données

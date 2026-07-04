@@ -1,0 +1,11 @@
+URL: https://www.meteojob.com/jobs/53506698
+ENTREPRISE: Ministère des Armées
+TITRE: ARCHITECTE DATA
+--------------------------------------------------
+
+Description du poste
+L'Architecte data est responsable du pilotage de haut niveau du modèle de données cible du projet OPERHA. Il assure la cohérence, la qualité et l'évolutivité du modèle et des référentiels associés en coordonnant les acteurs techniques et fonctionnels autour d'une vision cible. En véritable expert à dominante technique, il porte la feuille de route du modèle des donnés, priorise les besoins, clarifie les exigences et garantit l'alignement avec les standards d'architecture et les contraintes des systèmes connectés.
+Il est le garant de la cohérence du modèle de données cible, des mécanismes d'intégration, de synchronisation et de diffusion vers les applications consommatrices. Il analyse les impacts techniques, oriente vers des solutions modulaires et veille à la performance, à la sécurité et à la fiabilité des flux.
+Il accompagne les équipes projets, challenge les développements, analyse pour arbitrage les choix techniques et contribue à la définition des bonnes pratiques de gouvernance. En lien étroit avec les équipes Data, SSI et Métier présentes sur Tours, il garantit la bonne exploitation opérationnelle du modèle, tout en portant une vision d'amélioration continue et d'industrialisation.
+Date de début :
+01/10/2025

@@ -1,0 +1,15 @@
+URL: https://www.meteojob.com/jobs/50722911
+ENTREPRISE: Ministère des Armées
+TITRE: DATA MANAGER
+--------------------------------------------------
+
+Description du poste
+-Participer à la définition et au pilotage de la stratégie des données du ministère et des feuilles de route afférentes dans une cohérence globale d'architecture d'entreprise.
+-Participer au pilotage ministériel de la cartographie des données en s'appuyant sur le catalogue de données ministériel.
+-Participer à l'identification et la mise en place des briques techniques qui supportent l'ensemble des fonctions du cycle de vie de la donnée jusqu'à leur mise en service opérationnelle dans un environnement maîtrisé (gouvernance, RH, processus...)
+-Suivi des travaux interministériel et internationaux sur les données concernant le ministère.
+-Participer à la stratégie d'acculturation, de communication et d'animation de communautés sur les données. Animer des réseaux à différents niveaux d'action du ministère pour promouvoir et accompagner les métiers sur le sujet des données.
+-Etre amené à rédiger des articles de vulgarisation et de présentation de l'activité « données » du ministère.
+-Participer ponctuellement à des réunions interministérielles.
+Date de début :
+01/09/2025

@@ -1,0 +1,15 @@
+URL: https://www.meteojob.com/jobs/53994771
+ENTREPRISE: Ministère des Armées
+TITRE: DATA ENGINEER  ENERGIE
+--------------------------------------------------
+
+Description du poste
+Le titulaire du poste, Data Engineer, est responsable de la conception, du développement et de l'industrialisation des chaînes de collecte, de fiabilisation, de structuration et de valorisation des données énergétiques. Il s'assure également de la qualité de la gestion et de la gouvernance des données énergétiques, en collaboration étroite avec l'ensemble des acteurs du Minarm. A ce titre ses missions sont :
+- Identifier les besoins des utilisateurs en matière de données énergétiques (restitutions, indicateurs, outils de planification…) ;
+- Concevoir les processus de collecte, de fiabilisation, de structuration, de valorisation et d'hypervision des données énergétiques ;
+- Développer les outils nécessaires à la mise en œuvre automatisée des processus supra ;
+- Administrer la base de données produite, garantir sa portabilité et assurer son intégrité ;
+- Animer la gouvernance des données énergétiques (réunions, comité…).
+Le titulaire pourrait être amené à encadrer éventuellement un réserviste, ou à assurer le tutorat d'un apprenti ou un stagiaire.
+Date de début :
+01/05/2026
