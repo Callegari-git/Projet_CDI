@@ -71,3 +71,5 @@ target/
 *.class
 *.o
 *.so
+*.docx
+*.csv
