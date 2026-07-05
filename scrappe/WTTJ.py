@@ -67,9 +67,9 @@ with sync_playwright() as p:
     
     try:
         # On repère la zone de texte
-        champ_poste = page.locator('label:has-text("Intitulé de poste")').locator('xpath=..').locator('input').first
+        champ_poste = page.locator('label:has-text("Intitulés de poste")').locator('xpath=..').locator('input').first
         if not champ_poste.is_visible():
-            champ_poste = page.get_by_label("Intitulé de poste").first
+            champ_poste = page.get_by_label("Intitulés de poste").first
 
         # L'ASTUCE EST ICI : Si le champ est toujours caché, on clique sur "Rôle" !
         if not champ_poste.is_visible():

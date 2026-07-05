@@ -23,9 +23,10 @@ time.sleep(2)
 SCRIPTS = [
     "hellowork.py",
     "Jobteaser.py",
-    "Linkedin_scrapping.py",
+    "Linkedin2.py",
     "meteojob.py",
     "WTTJ.py",
+    "Indeed2.py",
     "fusion_csv.py"
 ]
 
