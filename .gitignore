@@ -74,3 +74,7 @@ target/
 *.so
 *.docx
 *.csv
+
+cv_lettre/
+descriptions_linkedin/
+resultats/
