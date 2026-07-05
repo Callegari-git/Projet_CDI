@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 # --- TES PARAMÈTRES ---
-EMAIL = "sebastien.callegari@gadz.org"
+EMAIL = os.getenv("MAIL_ADRESS_WTTJ")
 MOT_DE_PASSE = os.getenv("MOT_DE_PASSE_WTTJ")
 MOTS_CLES = os.getenv("MON_SCRAPER_MOTS_CLES", "data") # Tu peux ajouter la ville directement ici !
 MAX_PAGES = 3
