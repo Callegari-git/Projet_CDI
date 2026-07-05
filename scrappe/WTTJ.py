@@ -2,10 +2,11 @@ from playwright.sync_api import sync_playwright
 import pandas as pd
 from datetime import datetime
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # --- TES PARAMÈTRES ---
 EMAIL = "sebastien.callegari@gadz.org"
-MOT_DE_PASSE = "Callegar14042001$"
+MOT_DE_PASSE = os.getenv("MOT_DE_PASSE_WTTJ")
 MOTS_CLES = os.getenv("MON_SCRAPER_MOTS_CLES", "data") # Tu peux ajouter la ville directement ici !
 MAX_PAGES = 3
 # ----------------------

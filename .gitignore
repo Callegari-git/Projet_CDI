@@ -53,6 +53,7 @@ node_modules/
 .npm/
 
 # Python
+.venv
 __pycache__/
 *.py[cod]
 *$py.class
