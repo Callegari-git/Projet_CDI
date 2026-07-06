@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tableau de Bord — Offres d'emploi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          keyframes: {
+            'fade-in': {
+              '0%': { opacity: '0', transform: 'translateY(10px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'fade-in': 'fade-in 0.4s ease-out both',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    ::-webkit-scrollbar { width: 10px; height: 10px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .card-hover { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 28px -8px rgba(0,0,0,0.18); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white sticky top-0 z-20 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-500 flex items-center justify-center text-white shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.93 23.93 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-lg sm:text-xl font-bold tracking-tight text-slate-900">Tableau de Bord</h1>
+          <p class="text-xs text-slate-500 -mt-0.5">Offres d'emploi agrégées</p>
+        </div>
+      </div>
+      <button id="resetBtn" class="hidden items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.357 2H8m0 0V4m0 5h12M8 9v6a2 2 0 002 2h6a2 2 0 002-2v-6" />
+        </svg>
+        Recharger
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Upload zone (shown when no data) -->
+    <section id="uploadSection" class="flex flex-col items-center justify-center text-center py-16 sm:py-24">
+      <div class="w-full max-w-xl">
+        <div class="w-16 h-16 mx-auto rounded-2xl bg-indigo-50 flex items-center justify-center mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+          </svg>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">Importez votre fichier d'offres</h2>
+        <p class="mt-3 text-slate-500 max-w-md mx-auto">Téléversez un fichier CSV exporté depuis votre tableau de bord pour visualiser et filtrer les offres d'emploi.</p>
+
+        <label for="csvFile"
+          id="dropZone"
+          class="mt-8 block cursor-pointer rounded-2xl border-2 border-dashed border-slate-300 bg-white px-6 py-10 text-left transition-all hover:border-indigo-400 hover:bg-indigo-50/40">
+          <div class="flex flex-col items-center text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <p class="mt-4 text-sm font-semibold text-slate-700">
+              <span class="text-indigo-600">Cliquez pour parcourir</span> ou glissez-déposez votre fichier
+            </p>
+            <p class="mt-1 text-xs text-slate-400">Format attendu : CSV séparé par points-virgules</p>
+            <p class="mt-2 text-xs font-medium text-slate-500 truncate max-w-full" id="fileName"></p>
+          </div>
+        </label>
+        <input type="file" id="csvFile" accept=".csv" class="hidden" />
+
+        <p id="errorMessage" class="hidden mt-4 text-sm text-red-600 bg-red-50 rounded-lg px-4 py-3"></p>
+      </div>
+    </section>
+
+    <!-- Board section (hidden until data is loaded) -->
+    <section id="boardSection" class="hidden">
+      <!-- Stats -->
+      <div id="stats" class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-6"></div>
+
+      <!-- Filters bar -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 mb-6 sticky top-[73px] z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <!-- Search -->
+          <div class="relative sm:col-span-2 lg:col-span-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="searchInput" placeholder="Recherche par poste ou entreprise..."
+              class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none text-sm transition-all" />
+          </div>
+          <select id="platformFilter"
+            class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none text-sm transition-all">
+            <option value="">Toutes les plateformes</option>
+          </select>
+          <select id="contractFilter"
+            class="w-full px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100 outline-none text-sm transition-all">
+            <option value="">Tous les contrats</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results info -->
+      <div class="flex items-center justify-between mb-4">
+        <p id="resultsCount" class="text-sm text-slate-500"></p>
+      </div>
+
+      <!-- Jobs grid -->
+      <div id="jobsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5"></div>
+
+      <!-- Empty state (no results) -->
+      <div id="noResults" class="hidden text-center py-16">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <p class="mt-4 text-slate-500 font-medium">Aucune offre ne correspond à votre recherche.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-xs text-slate-400">
+    Tableau de bord des offres d'emploi &middot; Données importées localement
+  </footer>
+
+  <script>
+    // ---- Platform badge color mapping ----
+    const PLATFORM_STYLES = {
+      'LinkedIn':        { bg: 'bg-blue-50',  text: 'text-blue-700',  dot: 'bg-blue-500'   },
+      'Welcome to the Jungle': { bg: 'bg-yellow-50', text: 'text-yellow-800', dot: 'bg-yellow-500' },
+      'HelloWork':       { bg: 'bg-emerald-50', text: 'text-emerald-700', dot: 'bg-emerald-500' },
+      'Indeed':          { bg: 'bg-indigo-50', text: 'text-indigo-700', dot: 'bg-indigo-500' },
+      'Glassdoor':       { bg: 'bg-green-50',  text: 'text-green-700',  dot: 'bg-green-500'  },
+      'Pôle Emploi':     { bg: 'bg-rose-50',  text: 'text-rose-700',   dot: 'bg-rose-500'   },
+      'APEC':            { bg: 'bg-cyan-50',   text: 'text-cyan-700',   dot: 'bg-cyan-500'   },
+    };
+    const DEFAULT_PLATFORM_STYLE = { bg: 'bg-slate-100', text: 'text-slate-700', dot: 'bg-slate-500' };
+
+    const CONTRACT_STYLES = {
+      'CDI': 'bg-emerald-50 text-emerald-700',
+      'CDD': 'bg-amber-50 text-amber-700',
+      'Stage': 'bg-violet-50 text-violet-700',
+      'Alternance': 'bg-sky-50 text-sky-700',
+      'Freelance': 'bg-fuchsia-50 text-fuchsia-700',
+      'Intérim': 'bg-orange-50 text-orange-700',
+    };
+    const DEFAULT_CONTRACT_STYLE = 'bg-slate-100 text-slate-700';
+
+    function platformStyle(name) {
+      if (!name) return DEFAULT_PLATFORM_STYLE;
+      return PLATFORM_STYLES[name] || { bg: 'bg-slate-100', text: 'text-slate-600', dot: 'bg-slate-400' };
+    }
+    function contractStyle(name) {
+      return (name && CONTRACT_STYLES[name]) || DEFAULT_CONTRACT_STYLE;
+    }
+
+    // ---- State ----
+    let allJobs = [];
+
+    const $ = (id) => document.getElementById(id);
+    const uploadSection = $('uploadSection');
+    const boardSection  = $('boardSection');
+    const dropZone      = $('dropZone');
+    const fileInput     = $('csvFile');
+    const fileName      = $('fileName');
+    const errorMessage  = $('errorMessage');
+    const resetBtn      = $('resetBtn');
+    const searchInput   = $('searchInput');
+    const platformFilter= $('platformFilter');
+    const contractFilter= $('contractFilter');
+    const jobsGrid      = $('jobsGrid');
+    const noResults     = $('noResults');
+    const resultsCount  = $('resultsCount');
+    const stats         = $('stats');
+
+    // ---- File handling ----
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files[0]) handleFile(e.target.files[0]);
+    });
+
+    ['dragenter','dragover'].forEach(evt => {
+      dropZone.addEventListener(evt, (e) => { e.preventDefault(); dropZone.classList.add('border-indigo-400','bg-indigo-50/60'); });
+    });
+    ['dragleave','drop'].forEach(evt => {
+      dropZone.addEventListener(evt, (e) => { e.preventDefault(); dropZone.classList.remove('border-indigo-400','bg-indigo-50/60'); });
+    });
+    dropZone.addEventListener('drop', (e) => {
+      const f = e.dataTransfer.files[0];
+      if (f) { fileInput.files = e.dataTransfer.files; handleFile(f); }
+    });
+
+    resetBtn.addEventListener('click', () => {
+      fileInput.value = '';
+      fileName.textContent = '';
+      uploadSection.classList.remove('hidden');
+      boardSection.classList.add('hidden');
+      resetBtn.classList.add('hidden');
+      resetBtn.classList.remove('flex');
+      errorMessage.classList.add('hidden');
+      allJobs = [];
+    });
+
+    function handleFile(file) {
+      if (!file.name.toLowerCase().endsWith('.csv')) {
+        showError('Veuillez sélectionner un fichier CSV valide.');
+        return;
+      }
+      fileName.textContent = file.name;
+      errorMessage.classList.add('hidden');
+
+      Papa.parse(file, {
+        header: true,
+        delimiter: ';',
+        skipEmptyLines: true,
+        complete: (results) => {
+          const required = ['Plateforme','Intitulé du poste','Entreprise','Lieu','Date de publication','Type de contrat','Lien de l\'offre'];
+          const fields = results.meta.fields || [];
+          const missing = required.filter(c => !fields.includes(c));
+          if (missing.length > 0) {
+            showError('Colonnes manquantes dans le CSV : ' + missing.join(', '));
+            return;
+          }
+          // Normalize + trim
+          allJobs = results.data
+            .map(r => ({
+              plateforme:  (r['Plateforme'] || '').trim(),
+              poste:       (r['Intitulé du poste'] || '').trim(),
+              entreprise: (r['Entreprise'] || '').trim(),
+              lieu:        (r['Lieu'] || '').trim(),
+              date:        (r['Date de publication'] || '').trim(),
+              contrat:     (r['Type de contrat'] || '').trim(),
+              lien:        (r['Lien de l\'offre'] || '').trim(),
+            }))
+            .filter(j => j.poste || j.entreprise || j.lien);
+
+          if (allJobs.length === 0) {
+            showError('Le fichier ne contient aucune offre exploitable.');
+            return;
+          }
+          renderBoard();
+        },
+        error: (err) => showError('Erreur lors de la lecture du fichier : ' + err.message),
+      });
+    }
+
+    function showError(msg) {
+      errorMessage.textContent = msg;
+      errorMessage.classList.remove('hidden');
+    }
+
+    // ---- Rendering ----
+    function renderBoard() {
+      uploadSection.classList.add('hidden');
+      boardSection.classList.remove('hidden');
+      resetBtn.classList.remove('hidden');
+      resetBtn.classList.add('flex');
+
+      populateFilters();
+      renderStats();
+      applyFilters();
+    }
+
+    function populateFilters() {
+      const platforms = Array.from(new Set(allJobs.map(j => j.plateforme).filter(Boolean))).sort();
+      const contracts = Array.from(new Set(allJobs.map(j => j.contrat).filter(Boolean))).sort();
+
+      const fill = (sel, opts, placeholder) => {
+        const current = sel.value;
+        sel.innerHTML = `<option value="">${placeholder}</option>` +
+          opts.map(o => `<option value="${escapeAttr(o)}">${escapeHtml(o)}</option>`).join('');
+        sel.value = current;
+      };
+      fill(platformFilter, platforms, 'Toutes les plateformes');
+      fill(contractFilter, contracts, 'Tous les contrats');
+    }
+
+    function renderStats() {
+      const total = allJobs.length;
+      const platforms = new Set(allJobs.map(j => j.plateforme).filter(Boolean)).size;
+      const companies = new Set(allJobs.map(j => j.entreprise.toLowerCase()).filter(Boolean)).size;
+      const cdi = allJobs.filter(j => j.contrat && j.contrat.toUpperCase() === 'CDI').length;
+
+      stats.innerHTML = `
+        ${statCard('Offres', total, 'from-indigo-600 to-blue-500')}
+        ${statCard('Plateformes', platforms, 'from-emerald-500 to-teal-500')}
+        ${statCard('Entreprises', companies, 'from-fuchsia-500 to-purple-500')}
+        ${statCard('CDI', cdi, 'from-amber-500 to-orange-500')}
+      `;
+    }
+    function statCard(label, value, gradient) {
+      return `<div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 flex items-center gap-3">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white font-bold text-base shrink-0">${value}</div>
+        <p class="text-xs text-slate-500 leading-tight font-medium">${label}</p>
+      </div>`;
+    }
+
+    function applyFilters() {
+      const q = searchInput.value.trim().toLowerCase();
+      const pf = platformFilter.value;
+      const cf = contractFilter.value;
+
+      const filtered = allJobs.filter(j => {
+        if (pf && j.plateforme !== pf) return false;
+        if (cf && j.contrat !== cf) return false;
+        if (q) {
+          const hay = (j.poste + ' ' + j.entreprise + ' ' + j.lieu).toLowerCase();
+          if (!hay.includes(q)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        jobsGrid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        resultsCount.textContent = 'Aucune offre trouvée';
+        return;
+      }
+      noResults.classList.add('hidden');
+      resultsCount.textContent = `${filtered.length} offre${filtered.length > 1 ? 's' : ''} trouvée${filtered.length > 1 ? 's' : ''}`;
+      jobsGrid.innerHTML = filtered.map(renderCard).join('');
+    }
+
+    function renderCard(j, i) {
+      const ps = platformStyle(j.plateforme);
+      const cs = contractStyle(j.contrat);
+      const lienOk = !!j.lien;
+      const safeHref = lienOk ? escapeAttr(j.lien) : '#';
+
+      return `
+      <article key="${i}"
+        class="card-hover group bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-col gap-3 cursor-pointer animate-fade-in"
+        style="animation-delay:${Math.min(i * 30, 600)}ms"
+        ${lienOk ? `onclick="window.open('${safeHref}', '_blank', 'noopener,noreferrer')"` : ''}>
+
+        <div class="flex items-start justify-between gap-3">
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${ps.bg} ${ps.text}">
+            <span class="w-1.5 h-1.5 rounded-full ${ps.dot}"></span>${escapeHtml(j.plateforme || 'N/A')}
+          </span>
+          ${j.contrat ? `<span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${cs}">${escapeHtml(j.contrat)}</span>` : ''}
+        </div>
+
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-slate-900 leading-snug group-hover:text-indigo-600 transition-colors line-clamp-2">${escapeHtml(j.poste || 'Poste non précisé')}</h3>
+          <p class="mt-1 text-sm font-medium text-slate-600">${escapeHtml(j.entreprise || 'Entreprise confidentielle')}</p>
+          <p class="mt-1.5 text-xs text-slate-500 flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            ${escapeHtml(j.lieu || 'Lieu non précisé')}
+          </p>
+        </div>
+
+        <div class="pt-3 mt-1 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-xs text-slate-400">${escapeHtml(j.date || 'Date inconnue')}</span>
+          ${lienOk ? `<span class="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 group-hover:gap-1.5 transition-all">Voir l'offre
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg></span>` : '<span class="text-xs text-slate-400 italic">Lien indisponible</span>'}
+        </div>
+      </article>`;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&')
+        .replace(/</g, '<')
+        .replace(/>/g, '>')
+        .replace(/"/g, '"')
+        .replace(/'/g, '&#39;');
+    }
+    function escapeAttr(str) {
+      return String(str)
+        .replace(/&/g, '&')
+        .replace(/"/g, '"')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '<');
+    }
+
+    // ---- Wire up filters ----
+    searchInput.addEventListener('input', applyFilters);
+    platformFilter.addEventListener('change', applyFilters);
+    contractFilter.addEventListener('change', applyFilters);
+  </script>
+</body>
+</html>
